@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
   });
-// app.use(express.static('dist'))
+app.use(express.static('dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
