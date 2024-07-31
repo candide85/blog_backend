@@ -8,11 +8,11 @@ userRoute.get('/', async (request, response) =>{
     response.json(user)
 })
 
-const duplicate = (value1, value2) => {
-    if(value1 !== value2) {
-        return response.status(400).send({"error": "username exist"})
-    }
-}
+// const duplicate = (value1, value2) => {
+//     if(value1 !== value2) {
+//         return response.status(400).send({"error": "username exist"})
+//     }
+// }
 
 userRoute.post('/', async (request, response) => {
     const {username, name, password} = request.body
@@ -27,7 +27,7 @@ userRoute.post('/', async (request, response) => {
     return response.status(400).json({"error":"missing password"})
    }
 
-   duplicate(await User.find({username}), username)
+//    duplicate(await User.find({username}), username)
 
 
     const user = new User({
